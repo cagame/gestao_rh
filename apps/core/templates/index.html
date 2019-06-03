@@ -9,13 +9,15 @@
           <div class="col-sm">
             Ola {{ usuario.funcionario.nome }}
             <a href="{% url 'list_funcionarios' %}">Gerenciar funcionarios</a>
+            <a href="{% url 'list_departamentos' %}">Gerenciar departamentos</a>
+            <a href="{% url 'list_horaextra' %}">Gerenciar Banco de Horas</a>
           </div>
           <div class="col-sm">
             <a href="{% url 'logout' %}">Logout</a>
             {% if usuario.funcionario.empresa %}
                 <a href="{% url 'edit_empresa' usuario.funcionario.empresa.id %}">Editar Empresa</a>
             {% else%}
-                <a href="">Criar Empresa</a>                
+                <a href="{% url 'create_empresa' %}">Criar Empresa</a>
             {% endif %}
           </div>
         </div>
